@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>DC225 2024 NOLACON CTF</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: #000;
+            font-family: "Lucida Console";
+            color: #00FF33;
+        }
+        p.result {
+            color: #FF0000
+        }
+    </style>
+    <!--
+    NEC address: 08 00 00 00
+    -->
+</head>
+<body>
+    <h1>Welcome to the DC225 CTF @ NOLACON 2024!</h1>
+    <h2>About DC225</h2>
+    <p>DEF CON 225 (DC225) is a local <a href="https://defcongroups.org/dcgfaq.html" target="_blank">DEF CON group</a> for the 225 area code and surrounding areas. 337, 318, 225, 504, and 985 area codes are represented.</p>
+    <p>DC225 is composed of students, professionals, researchers, and hobbyists that meet monthly and discuss current trends, topics, and research in the fields of computer security, digital forensics, and related.</p>
+    <p>Join our <a href="https://discord.gg/EJjRn2JpZf" target="_blank">Discord</a> and after con make one of our meetings! For more information check out <a href="https://defcon225.org" target="_blank">defcon225.org</a>.</p>
+    <br />
+    <h2>SAO Badge Assembly</h2>
+    <p>The first step is to assemble your <a href="https://hackaday.com/2019/03/20/introducing-the-shitty-add-on-v1-69bis-standard/" target="_blank">Simple Add-On (SAO) badge</a>.</p>
+    <p>Within the anti-static baggie you should have:</p>
+    <ul>
+        <li>One (1) DC225 PCB</li>
+        <li>One (1) Six (6) Position Vertical Connection Header</li>
+        <li>One (1) TSOP39338 Sensor</li>
+    </ul>
+    <p>The good news is that the majority of the components are already soldered onto the badge!</p>
+    <p>This includes one (1) ATTINY85V-10SU Integrated Circuit at the U1 position, four (4) RC0402JR-07100RL 100 OHM 5% 1/16W SMD resistors at the R3, R4, and R5 positions, two (2) RC0402JR-07300RL 300 OHM 5% 1/16W SMD resistors at the R1 and R2 positions, and two (2) EAST1616RGBB4 RGB SMD LEDs.
+    <p>So that leaves the two through-hole components included within the anti-static bag.</p>
+    <p>First place the badge face down (that's the white side of the badge down). Then insert the Six (6) Position Vertical Connection Header so that the notch of the plastic matches the notch found in the white silkscreen (where the X1 label is). Rotate the badge ensuring the component doesn't fall out and then begin soldering the six (6) leads to the board. Here's a reference image:</p>
+    <img src="header.jpg">
+    <p>Next, take a quick look at the TSOP39338 Sensor component. Notice how the face of the component has two circles and that one side of those circles is flat. We'll consider this flat side the top. With the badge face up (again that's the white side...) insert the TSOP39338 Sensor so that the flat side of the circles is up. Again flip the badge over making sure the component doesn't fall out and carefully solder the four (4) leads ensuring not to bridge any of the connections. Here's another picture:</p>
+    <img src="tsop.jpg">
+    <p>That's all for the assembly! Now just plug the badge into your con badge's SAO connector or supply 3.3v of power and the LEDs should illuminate!<p>
+    <p>Now it's time to try your hand at the CTF!</p>
+    <br />
+    <h2>CTF INFORMATION</h2>
+    <p>There are flags (this is a CTF after all). Find them! You will need a way to send infrared signals.</p>
+    <p>If you have any questions find s0ups or one of the DC225 folks or hit me up at <a href="https://twitter.com/ynots0ups" target="_blank">@ynots0ups</a>.</p>
+    <p>Thanks for playing!</p>
+    <br />
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <p><h3>How do I supply power to the badge?</h3></p>
+    <p>There are two options - either via the 6-pin SAO connector or the labeled programming headers. Here's an image to help:</p>
+    <img src="vcc_gnd.jpg">
+    <p><h3>What are the ATTiny's Pinouts?</h3></p>
+    <p>You can find the ATTiny's datasheet <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet-Summary.pdf" target="_blank">here</a>. For the DC225 SAO badge, here are the relevant connections:
+    <ul>
+        <li>PB1 - TSOP39338 In</li>
+        <li>PB2 - Red LEDs</li>
+        <li>PB3 - Green LEDs</li>
+        <li>PB4 - Blue LEDs</li>
+    </ul>
+    </p>
+</body>
+</html>
